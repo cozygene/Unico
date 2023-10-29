@@ -1,0 +1,20 @@
+default:
+  # the followings are required for numerical stability for iteratively estimating means and vars
+  min_mean: 1.0e-7
+  max_mean: 10000000
+  min_var: 1.0e-7
+  effect_size_negative_lb: -1.0e+7
+  
+  nloptr_local_maxeval: 150
+  nloptr_local_xtol_rel: 1.0e-8
+ 
+  
+  nloptr_global_maxeval: 150
+  nloptr_global_xtol_rel: 1.0e-8
+ 
+  nloptr_grad_check_derivatives: FALSE
+  
+  epsilon: 0.00001
+  
+  type: "timer" # change to "none" to supress the progress bars (this will result is some speed up of the running time)
+  nout: 10  # the resolution of the progress bars (higher values -> highr resolution but increased overhead, which in turns results in longer running time)
