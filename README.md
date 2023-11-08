@@ -1,8 +1,9 @@
 # Unico
 We present Unico, a unified cross-omics method designed to deconvolve standard 2-dimensional bulk matrices of samples by features into a 3-dimensional tensors representing samples by features by cell types. Unico stands out as the first principled model-based deconvolution method that is theoretically justified for any heterogeneous genomic data.
 
-All the neccesary scripts used for the analyses reported in the manuscripts can be found under ./Rscripts
-A R pacakge will be available soon on CRAN
+All necessary scripts used for the analyses reported in the manuscripts can be found under ./Rscripts
+
+Unico will be available soon on CRAN as a R package
 
 ### Installation Instructions
 Please install the following packages in R, which should finish within an hour.
@@ -53,7 +54,7 @@ Unico.mdl$params.hat = add_C1_C2_pvals_parametric(X = X, Unico.mdl = Unico.mdl$p
 Unico.mdl$params.hat = add_C1_C2_pvals_asymptotic(X = X, Unico.mdl = Unico.mdl$params.hat, slot_name = "asymptotic")
 ```
 ### Tutorial
-Please head to "Tutorial/Tutorial.ipynb"
+Please head to "Tutorial/Tutorial.ipynb" for a more involved step by step tutorial on deconvolving a simulated PBMC pseudo-bulk dataset.
 
 ### Author
 
