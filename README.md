@@ -1,4 +1,8 @@
 # Unico
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/cozygene/Unico/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/cozygene/Unico/actions/workflows/R-CMD-check.yaml)
+  <!-- badges: end -->
+  
 We present Unico, a unified cross-omics method designed to deconvolve standard 2-dimensional bulk matrices of samples by features into a 3-dimensional tensors representing samples by features by cell types. Unico stands out as the first principled model-based deconvolution method that is theoretically justified for any heterogeneous genomic data.
 
 All necessary scripts used for the analyses reported in the manuscript can be found under ./Rscripts
@@ -54,7 +58,7 @@ Unico.mdl$params.hat = add_C1_C2_pvals_parametric(X = X, Unico.mdl = Unico.mdl$p
 Unico.mdl$params.hat = add_C1_C2_pvals_asymptotic(X = X, Unico.mdl = Unico.mdl$params.hat, slot_name = "asymptotic")
 ```
 ### Tutorial
-Please head to "Tutorial/Tutorial.ipynb" for a more involved step by step tutorial on deconvolving a simulated PBMC pseudo-bulk dataset.
+Please head to "vignettes" folder for a more involved step by step tutorial on deconvolving a simulated PBMC pseudo-bulk expression dataset and association testing on methylation data.
 
 ### Author
 
