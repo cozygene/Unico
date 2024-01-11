@@ -9,3 +9,6 @@ LICENSE
 ^pkgdown$
 ^cran-comments\.md$
 ^\.github$
+^vignettes/pbmc\.rds$
+^vignettes/liu\.rds$
+^vignettes/hannum\.rds$

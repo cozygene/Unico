@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```{r eval=F, setup}
 library(Unico)
 library(matrixStats)
-source("vignetts.utils.r")
+source("https://github.com/cozygene/Unico/raw/main/vignettes/vignetts.utils.r")
 ```
 
 
@@ -27,7 +27,7 @@ Let's first load a small simulated pseudo-bulk PBMC expression profiles using da
 ```{r eval=F}
 data_path <- "./"
 if(!file.exists(file.path(data_path, "pbmc.rds"))){
-	download.file("github.com/cozygene/Unico/blob/master/vignettes/pbmc.rds?raw=true", file.path(data_path,"pbmc.rds"))
+	download.file("https://github.com/cozygene/Unico/raw/main/vignettes/pbmc.rds", file.path(data_path,"pbmc.rds"))
 }
 sim.data = readRDS(file.path(data_path,"pbmc.rds"))
 ```
@@ -74,10 +74,10 @@ Unico also offers association testing at cell-type resolution. Let's look at two
 ```{r eval=F, echo = T, results = 'hide'}
 data_path <- "./"
 if(!file.exists(file.path(data_path, "liu.rds"))){
-	download.file("github.com/cozygene/Unico/blob/master/vignettes/liu.rds?raw=true", file.path(data_path,"liu.rds"))
+	download.file("https://github.com/cozygene/Unico/raw/main/vignettes/liu.rds", file.path(data_path,"liu.rds"))
 }
 if(!file.exists(file.path(data_path, "hannum.rds"))){
-	download.file("github.com/cozygene/Unico/blob/master/vignettes/hannum.rds?raw=true", file.path(data_path,"hannum.rds"))
+	download.file("https://github.com/cozygene/Unico/raw/main/vignettes/hannum.rds", file.path(data_path,"hannum.rds"))
 }
 liu    = readRDS(file.path(data_path,"liu.rds"))
 hannum = readRDS(file.path(data_path,"hannum.rds"))

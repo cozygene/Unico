@@ -71,7 +71,7 @@ For a given feature \eqn{j} under test, the above equation corresponds to a hete
 This view allows us to perform parametric statistical testing (T-test for marginal effects and partial F-test for joint effects) by solving a generalized least squares problem with sample \eqn{i} scaled by the inverse of its estimated standard deviation.
 }
 \examples{
-data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0)
+data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
 res = list()
 res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 res$params.hat = association_parametric(data$X, res$params.hat, parallel=FALSE, log_file=NULL)

@@ -55,7 +55,7 @@
 #' \item{sigmas_hat_list}{A list tracking, for each feature, the computed estimates of the variance-covariance matrix at each iteration of the variance-covariance optimization (activated only if \code{debug == TRUE}).}
 #'
 #' @examples
-#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0)
+#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
 #' res = list()
 #' res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 #'
@@ -256,7 +256,7 @@ Unico = function(X, W, C1, C2, fit_tau = FALSE,
 #' @return A \code{k} by \code{m} by \code{n} array with the estimated source-specific values. The first axis/dimension in the array corresponds to the different sources.
 #'
 #' @examples
-#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0)
+#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
 #' res = list()
 #' res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 #' res$Z = tensor(data$X, data$W, data$C1, data$C2, res$params.hat, parallel=FALSE, log_file=NULL)
@@ -370,7 +370,7 @@ tensor = function(X, W, C1, C2, Unico.mdl, parallel = TRUE, num_cores = NULL,
 #' \item{phi_hat_pvals}{An \code{m} by \code{k+p1*k+p2} matrix containing the p-values associated with \code{phi_hat} for each feature (activated only if \code{debug == TRUE}).}
 #'
 #' @examples
-#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0)
+#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
 #' res = list()
 #' res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 #' res$params.hat = association_parametric(data$X, res$params.hat, parallel=FALSE, log_file=NULL)
@@ -608,7 +608,7 @@ association_parametric = function(X, Unico.mdl, slot_name = "parametric",
 #' \item{phi_hat_pvals}{An \code{m} by \code{k+p1*k+p2} matrix containing the p-values associated with \code{phi_hat} for each feature (activated only if \code{debug == TRUE}).}
 #'
 #' @examples
-#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0)
+#' data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
 #' res = list()
 #' res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 #' res$params.hat = association_asymptotic(data$X, res$params.hat, parallel=FALSE, log_file=NULL)
@@ -840,7 +840,7 @@ association_asymptotic = function(X, Unico.mdl, slot_name = "asymptotic",
 
 #'
 #' @examples
-#' sim.data = simulate_data(n = 100, m = 5, k = 5, p1 = 1, p2 = 2)
+#' sim.data = simulate_data(n = 100, m = 5, k = 5, p1 = 1, p2 = 2, log_file = NULL)
 #'
 #' @export simulate_data
 

@@ -48,7 +48,7 @@ Infers the underlying (sources by features by observations) 3D tensor from the o
 After obtaining all the estimated parameters in the Unico model (by calling \link{Unico}), \code{tensor} uses the conditional distribution \eqn{Z_{jh}^i|X_{ij}=x_{ij}} for estimating the \eqn{k} source-specific levels of each sample \eqn{i} at each feature \eqn{j}.
 }
 \examples{
-data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0)
+data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
 res = list()
 res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 res$Z = tensor(data$X, data$W, data$C1, data$C2, res$params.hat, parallel=FALSE, log_file=NULL)
