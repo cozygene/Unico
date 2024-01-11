@@ -232,17 +232,17 @@ Finally, we actively model the \(k\) by \(k\) covariance structure of a given fe
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="simulate_data.html">simulate_data</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, m <span class="op">=</span> <span class="fl">2</span>, k <span class="op">=</span> <span class="fl">3</span>, p1 <span class="op">=</span> <span class="fl">1</span>, p2 <span class="op">=</span> <span class="fl">1</span>, taus_std <span class="op">=</span> <span class="fl">0</span>, log_file <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:15] Start simulation ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:15] Finished simulation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Start simulation ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Finished simulation</span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span><span class="op">$</span><span class="va">params.hat</span> <span class="op">=</span> <span class="fu">Unico</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">X</span>, <span class="va">data</span><span class="op">$</span><span class="va">W</span>, <span class="va">data</span><span class="op">$</span><span class="va">C1</span>, <span class="va">data</span><span class="op">$</span><span class="va">C2</span>, parallel<span class="op">=</span><span class="cn">FALSE</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:15] Starting Unico ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:15] Validate Unico inputs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:16] Starting parameter learning ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Starting Unico ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Validate Unico inputs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Starting parameter learning ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:16] Formating results ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:16] Capping extreme values in estimated parameters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:38:16] Finished parameter learning</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Formating results ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Capping extreme values in estimated parameters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 05:47:23] Finished parameter learning</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
