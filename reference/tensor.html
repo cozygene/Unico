@@ -132,24 +132,24 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="simulate_data.html">simulate_data</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, m <span class="op">=</span> <span class="fl">2</span>, k <span class="op">=</span> <span class="fl">3</span>, p1 <span class="op">=</span> <span class="fl">1</span>, p2 <span class="op">=</span> <span class="fl">1</span>, taus_std <span class="op">=</span> <span class="fl">0</span>, log_file <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Start simulation ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Finished simulation</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="simulate_data.html">simulate_data</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, m<span class="op">=</span><span class="fl">2</span>, k<span class="op">=</span><span class="fl">3</span>, p1<span class="op">=</span><span class="fl">1</span>, p2<span class="op">=</span><span class="fl">1</span>, taus_std<span class="op">=</span><span class="fl">0</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:09] Start simulation ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:09] Finished simulation</span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span><span class="op">$</span><span class="va">params.hat</span> <span class="op">=</span> <span class="fu"><a href="Unico.html">Unico</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">X</span>, <span class="va">data</span><span class="op">$</span><span class="va">W</span>, <span class="va">data</span><span class="op">$</span><span class="va">C1</span>, <span class="va">data</span><span class="op">$</span><span class="va">C2</span>, parallel<span class="op">=</span><span class="cn">FALSE</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Starting Unico ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Validate Unico inputs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Starting parameter learning ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:09] Starting Unico ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:09] Validate Unico inputs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:09] Starting parameter learning ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Formating results ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Capping extreme values in estimated parameters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Finished parameter learning</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:10] Formating results ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:10] Capping extreme values in estimated parameters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:10] Finished parameter learning</span>
 <span class="r-in"><span><span class="va">res</span><span class="op">$</span><span class="va">Z</span> <span class="op">=</span> <span class="fu">tensor</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">X</span>, <span class="va">data</span><span class="op">$</span><span class="va">W</span>, <span class="va">data</span><span class="op">$</span><span class="va">C1</span>, <span class="va">data</span><span class="op">$</span><span class="va">C2</span>, <span class="va">res</span><span class="op">$</span><span class="va">params.hat</span>, parallel<span class="op">=</span><span class="cn">FALSE</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Validate tensor inputs ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Starting tensor ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:10] Validate tensor inputs ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:10] Starting tensor ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Formating tensor result ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:04] Finished tensor estimation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:10] Formating tensor result ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:10] Finished tensor estimation</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

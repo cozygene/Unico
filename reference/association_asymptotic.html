@@ -182,25 +182,25 @@ Marginal testing can thus be carried out on each dependent variable via the asym
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="simulate_data.html">simulate_data</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, m <span class="op">=</span> <span class="fl">2</span>, k <span class="op">=</span> <span class="fl">3</span>, p1 <span class="op">=</span> <span class="fl">1</span>, p2 <span class="op">=</span> <span class="fl">1</span>, taus_std <span class="op">=</span> <span class="fl">0</span>, log_file <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Start simulation ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Finished simulation</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="simulate_data.html">simulate_data</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, m<span class="op">=</span><span class="fl">2</span>, k<span class="op">=</span><span class="fl">3</span>, p1<span class="op">=</span><span class="fl">1</span>, p2<span class="op">=</span><span class="fl">1</span>, taus_std<span class="op">=</span><span class="fl">0</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Start simulation ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Finished simulation</span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span><span class="op">$</span><span class="va">params.hat</span> <span class="op">=</span> <span class="fu"><a href="Unico.html">Unico</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">X</span>, <span class="va">data</span><span class="op">$</span><span class="va">W</span>, <span class="va">data</span><span class="op">$</span><span class="va">C1</span>, <span class="va">data</span><span class="op">$</span><span class="va">C2</span>, parallel<span class="op">=</span><span class="cn">FALSE</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Starting Unico ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Validate Unico inputs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Starting parameter learning ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Starting Unico ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Validate Unico inputs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Starting parameter learning ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Formating results ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Capping extreme values in estimated parameters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Finished parameter learning</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Formating results ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Capping extreme values in estimated parameters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Finished parameter learning</span>
 <span class="r-in"><span><span class="va">res</span><span class="op">$</span><span class="va">params.hat</span> <span class="op">=</span> <span class="fu">association_asymptotic</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">X</span>, <span class="va">res</span><span class="op">$</span><span class="va">params.hat</span>, parallel<span class="op">=</span><span class="cn">FALSE</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Validate asymptotic inputs ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Validate asymptotic inputs ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Preparing weights for asymptotic pvals calculation ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Starting asymptotic pvals calculation: asymptotic ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Preparing weights for asymptotic pvals calculation ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Starting asymptotic pvals calculation: asymptotic ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 06:43:03] Finished asymptotic pvals calculation: asymptotic</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 08:02:08] Finished asymptotic pvals calculation: asymptotic</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
