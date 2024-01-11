@@ -13,10 +13,13 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-
+# Load the Unico package and 
 ```{r eval=F, setup}
 library(Unico)
 library(matrixStats)
+
+#For visualization in this vignette
+install.packages(c("ggplot2","ggpubr","hexbin"))
 source("https://github.com/cozygene/Unico/raw/main/vignettes/vignetts.utils.r")
 ```
 
