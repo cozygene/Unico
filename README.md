@@ -20,7 +20,7 @@ devtools::install_github("https://github.com/cozygene/Unico")
 Our algorithm is tested on both R 3.6.1 and R 4.1.0, on Windows, Linux and MacOS based machines.
 
 ### Tutorial
-Please head to <a href="https://cozygene.github.io/Unico/articles/Unico-Tutorial.html">this vignettes</a> for a more involved step by step tutorial on deconvolving a simulated PBMC pseudo-bulk expression dataset and association testing on subsets of publicly available methylation datasets.
+Please head to <a href="https://cozygene.github.io/Unico/articles/Unico-Tutorial.html">this vignette</a> for a step by step tutorial on (1) deconvolving a simulated PBMC pseudo-bulk expression dataset and (2) association testing on subsets of publicly available methylation datasets.
 
 ### Author
 
