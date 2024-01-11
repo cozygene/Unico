@@ -100,7 +100,7 @@ We also consider covariates \eqn{c_i^{(1)}} that systematically affect the sourc
 Finally, we actively model the \eqn{k} by \eqn{k} covariance structure of a given feature \eqn{j} across all \eqn{k} sources \eqn{Var[\vec{\epsilon_{ij}}] = \Sigma_{j} \in \mathbf{R}^{k \times k}}.
 }
 \examples{
-data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
+data = simulate_data(n=100, m=2, k=3, p1=1, p2=1, taus_std=0, log_file=NULL)
 res = list()
 res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 

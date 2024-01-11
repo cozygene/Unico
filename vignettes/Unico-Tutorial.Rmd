@@ -19,7 +19,7 @@ library(Unico)
 library(matrixStats)
 
 #For visualization in this vignette
-install.packages(c("ggplot2","ggpubr","hexbin"))
+install.packages(c("ggplot2","ggpubr","hexbin", "egg"))
 source("https://github.com/cozygene/Unico/raw/main/vignettes/vignetts.utils.r")
 ```
 

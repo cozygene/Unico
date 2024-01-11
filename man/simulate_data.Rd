@@ -76,6 +76,6 @@ Simulate all model parameters and sample source specific data from multivariate 
 Simulate data based on the generative model described in function \link{Unico}.
 }
 \examples{
-sim.data = simulate_data(n = 100, m = 5, k = 5, p1 = 1, p2 = 2, log_file = NULL)
+data = simulate_data(n=100, m=2, k=3, p1=1, p2=1, taus_std=0, log_file=NULL)
 
 }

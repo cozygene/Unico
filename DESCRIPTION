@@ -34,6 +34,7 @@ Imports:
     testit,
     utils
 Suggests: 
+    egg,
     hexbin,
     knitr,
     rmarkdown,

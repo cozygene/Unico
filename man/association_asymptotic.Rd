@@ -73,7 +73,7 @@ Under no distribution assumption, we can solve for the following weighted least 
 Marginal testing can thus be carried out on each dependent variable via the asymptotic distribution of the estimator \eqn{\hat{\phi_j}^{\text{asym}}}.
 }
 \examples{
-data = simulate_data(n = 100, m = 2, k = 3, p1 = 1, p2 = 1, taus_std = 0, log_file = NULL)
+data = simulate_data(n=100, m=2, k=3, p1=1, p2=1, taus_std=0, log_file=NULL)
 res = list()
 res$params.hat = Unico(data$X, data$W, data$C1, data$C2, parallel=FALSE, log_file=NULL)
 res$params.hat = association_asymptotic(data$X, res$params.hat, parallel=FALSE, log_file=NULL)
