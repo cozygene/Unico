@@ -12,3 +12,4 @@ LICENSE
 ^vignettes/pbmc\.rds$
 ^vignettes/liu\.rds$
 ^vignettes/hannum\.rds$
+^CRAN-SUBMISSION$
