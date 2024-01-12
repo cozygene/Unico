@@ -75,8 +75,8 @@
 <span>  parallel <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  num_cores <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  log_file <span class="op">=</span> <span class="st">"Unico.log"</span>,</span>
-<span>  debug <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  debug <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -126,12 +126,12 @@
 <dd><p>A path to an output log file. Note that if the file <code>log_file</code> already exists then logs will be appended to the end of the file. Set <code>log_file</code> to <code>NULL</code> to prevent output from being saved into a file; note that if <code>verbose == FALSE</code> then no output file will be generated regardless of the value of <code>log_file</code>.</p></dd>
 
 
-<dt>debug</dt>
-<dd><p>A logical value indicating whether to set the logger to a more detailed debug level; set <code>debug</code> to <code>TRUE</code> before reporting issues.</p></dd>
-
-
 <dt>verbose</dt>
 <dd><p>A logical value indicating whether to print logs.</p></dd>
+
+
+<dt>debug</dt>
+<dd><p>A logical value indicating whether to set the logger to a more detailed debug level; set <code>debug</code> to <code>TRUE</code> before reporting issues.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -182,23 +182,9 @@ This view allows us to perform parametric statistical testing (T-test for margin
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">=</span> <span class="fu"><a href="simulate_data.html">simulate_data</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">100</span>, m<span class="op">=</span><span class="fl">2</span>, k<span class="op">=</span><span class="fl">3</span>, p1<span class="op">=</span><span class="fl">1</span>, p2<span class="op">=</span><span class="fl">1</span>, taus_std<span class="op">=</span><span class="fl">0</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Start simulation ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Finished simulation</span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">res</span><span class="op">$</span><span class="va">params.hat</span> <span class="op">=</span> <span class="fu"><a href="Unico.html">Unico</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">X</span>, <span class="va">data</span><span class="op">$</span><span class="va">W</span>, <span class="va">data</span><span class="op">$</span><span class="va">C1</span>, <span class="va">data</span><span class="op">$</span><span class="va">C2</span>, parallel<span class="op">=</span><span class="cn">FALSE</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Starting Unico ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Validate Unico inputs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Starting parameter learning ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Formating results ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Capping extreme values in estimated parameters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Finished parameter learning</span>
 <span class="r-in"><span><span class="va">res</span><span class="op">$</span><span class="va">params.hat</span> <span class="op">=</span> <span class="fu">association_parametric</span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">X</span>, <span class="va">res</span><span class="op">$</span><span class="va">params.hat</span>, parallel<span class="op">=</span><span class="cn">FALSE</span>, log_file<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Validate parametric inputs ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Preparing weights for parametric pvals calculation ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Starting parametric pvals calculation: parametric ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> INFO [2024-01-11 19:06:35] Finished parametric pvals calculation: parametric</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
