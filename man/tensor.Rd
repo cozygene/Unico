@@ -13,7 +13,7 @@ tensor(
   parallel = TRUE,
   num_cores = NULL,
   log_file = "Unico.log",
-  verbose = TRUE,
+  verbose = FALSE,
   debug = FALSE
 )
 }

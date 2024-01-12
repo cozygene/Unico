@@ -3,10 +3,20 @@ library(Unico)
 test_that("estimated params and tensors are consisitent with frozen result", {
 	skip_on_cran()
 
-	basedir <- "../assets/"
-	set.seed(2023)
+
+	#basedir <- "../assets"
+	download.file("https://github.com/cozygene/Unico/raw/main/tests/assets/simulation.rds","simulation.rds")
+	download.file("https://github.com/cozygene/Unico/raw/main/tests/assets/frozen.mdl.rds","frozen.mdl.rds")
+
+	sim.data = readRDS("simulation.rds")
+	frozen.mdl = readRDS("frozen.mdl.rds")
+
+	file.remove("simulation.rds")
+	file.remove("frozen.mdl.rds")
+
+
 	#model fit
-	sim.data = readRDS(file.path(basedir,"simulation.rds"))
+	set.seed(2023)
 	Unico.mdl = list()
 	Unico.mdl$params.hat <- Unico(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, parallel = F)
 	n = nrow(sim.data$W)
@@ -16,7 +26,6 @@ test_that("estimated params and tensors are consisitent with frozen result", {
 	p2 = ncol(sim.data$C2)
 
 	# mean check
-	frozen.mdl = readRDS(file.path(basedir,"frozen.mdl.rds"))
 	for (h in 1:k){
 		expect_equal(cor(frozen.mdl$mus_hat[,h], Unico.mdl$params.hat$mus_hat[,h]) > 0.99, TRUE)
 	}

@@ -16,8 +16,8 @@ association_asymptotic(
   parallel = TRUE,
   num_cores = NULL,
   log_file = "Unico.log",
-  debug = FALSE,
-  verbose = TRUE
+  verbose = FALSE,
+  debug = FALSE
 )
 }
 \arguments{
@@ -43,9 +43,9 @@ association_asymptotic(
 
 \item{log_file}{A path to an output log file. Note that if the file \code{log_file} already exists then logs will be appended to the end of the file. Set \code{log_file} to \code{NULL} to prevent output from being saved into a file; note that if \code{verbose == FALSE} then no output file will be generated regardless of the value of \code{log_file}.}
 
-\item{debug}{A logical value indicating whether to set the logger to a more detailed debug level; set \code{debug} to \code{TRUE} before reporting issues.}
-
 \item{verbose}{A logical value indicating whether to print logs.}
+
+\item{debug}{A logical value indicating whether to set the logger to a more detailed debug level; set \code{debug} to \code{TRUE} before reporting issues.}
 }
 \value{
 An updated \code{Unico.mdl} object with the the following list of effect size and p-value estimates stored in an additional key specified by \code{slot_name}

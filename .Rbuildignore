@@ -13,3 +13,4 @@ LICENSE
 ^vignettes/liu\.rds$
 ^vignettes/hannum\.rds$
 ^CRAN-SUBMISSION$
+^tests/assets$

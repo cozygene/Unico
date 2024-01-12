@@ -20,7 +20,7 @@ simulate_data(
   sigmas_ub = 1,
   taus_std = 0.1,
   log_file = "Unico.log",
-  verbose = TRUE
+  verbose = FALSE
 )
 }
 \arguments{

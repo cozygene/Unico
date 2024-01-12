@@ -4,10 +4,12 @@ test_that("association testing on cell-type and tissue level covariates has good
 
 	skip_on_cran()
 
-	basedir <- "../assets/"
-
 	#source-specific association
-	sim.data = readRDS(file.path(basedir,"simulation.gammas.10.rds"))
+
+	download.file("https://github.com/cozygene/Unico/raw/main/tests/assets/simulation.gammas.10.rds", "simulation.gammas.10.rds")
+	sim.data = readRDS("simulation.gammas.10.rds")
+	file.remove("simulation.gammas.10.rds")
+
 	Unico.mdl = list()
 	Unico.mdl$params.hat <- Unico(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, parallel = F)
 	Unico.mdl$params.hat = association_parametric(X = sim.data$X, Unico.mdl$params.hat, parallel = F)
@@ -21,9 +23,11 @@ test_that("association testing on cell-type and tissue level covariates has good
 	global.marg.pvals = Unico.mdl$params.hat$parametric$betas_hat_pvals
 	expect_equal(sum(global.marg.pvals < 0.05/(nrow(global.marg.pvals) * ncol(global.marg.pvals)))/(nrow(global.marg.pvals) * ncol(global.marg.pvals)) < 0.05, TRUE)
 
-
 	#non-source-specific association
-	sim.data = readRDS(file.path(basedir,"simulation.betas.10.rds"))
+	download.file("https://github.com/cozygene/Unico/raw/main/tests/assets/simulation.betas.10.rds","simulation.betas.10.rds")
+	sim.data = readRDS("simulation.betas.10.rds")
+	file.remove("simulation.betas.10.rds")
+
 	Unico.mdl = list()
 	Unico.mdl$params.hat <- Unico(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, parallel = F)
 	Unico.mdl$params.hat = association_parametric(X = sim.data$X, Unico.mdl$params.hat, parallel = F)

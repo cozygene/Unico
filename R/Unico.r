@@ -64,7 +64,7 @@ Unico = function(X, W, C1, C2, fit_tau = FALSE,
                  mean_penalty = 0, var_penalty = 0.01, covar_penalty = 0.01,
                  mean_max_iterations = 2, var_max_iterations = 3, nloptr_opts_algorithm = "NLOPT_LN_COBYLA",
                  max_stds = 2, init_weight = "default", max_u = 1, max_v = 1,
-                 parallel = TRUE, num_cores = NULL, log_file = "Unico.log", verbose = TRUE, debug = FALSE){
+                 parallel = TRUE, num_cores = NULL, log_file = "Unico.log", verbose = FALSE, debug = FALSE){
 
     start_logger(log_file, debug, verbose)
     flog.info("Starting Unico ...")
@@ -263,7 +263,7 @@ Unico = function(X, W, C1, C2, fit_tau = FALSE,
 #'
 #' @export tensor
 tensor = function(X, W, C1, C2, Unico.mdl, parallel = TRUE, num_cores = NULL,
-                  log_file = "Unico.log", verbose = TRUE, debug = FALSE){
+                  log_file = "Unico.log", verbose = FALSE, debug = FALSE){
 
     start_logger(log_file, debug, verbose)
 	  config = config::get(file = system.file("extdata", "config.yml", package = "Unico"), use_parent = FALSE)
@@ -382,7 +382,7 @@ association_parametric = function(X, Unico.mdl, slot_name = "parametric",
                                   Q_max_stds  = Inf,
                                   XQ_max_stds = Inf,
                                   parallel = TRUE, num_cores = NULL,
-                                  log_file = "Unico.log", debug = FALSE, verbose = TRUE){
+                                  log_file = "Unico.log", verbose = FALSE, debug = FALSE){
 
     start_logger(log_file, debug, verbose)
 	  config = config::get(file = system.file("extdata", "config.yml", package = "Unico"), use_parent = FALSE)
@@ -620,7 +620,7 @@ association_asymptotic = function(X, Unico.mdl, slot_name = "asymptotic",
                                   Q_max_stds  = Inf,  #analytical variance
                                   V_min_qlt   = 0.05, #moment condition variance
                                   parallel = TRUE, num_cores = NULL,
-                                  log_file = "Unico.log", debug = FALSE, verbose = TRUE){
+                                  log_file = "Unico.log", verbose = FALSE, debug = FALSE){
 
     start_logger(log_file, debug, verbose)
 	  config = config::get(file = system.file("extdata", "config.yml", package = "Unico"), use_parent = FALSE)
@@ -849,7 +849,7 @@ simulate_data = function(n, m, k, p1, p2,
 												 gammas_mean = 1, gammas_std = 0.1,
 												 betas_mean = 1, betas_std = 0.1,
 												 sigmas_lb = 0, sigmas_ub = 1, taus_std = 0.1,
-												 log_file = "Unico.log", verbose = TRUE){
+												 log_file = "Unico.log", verbose = FALSE){
 	start_logger(log_file, FALSE, verbose)
 	flog.info("Start simulation ...")
 
