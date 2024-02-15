@@ -8,10 +8,10 @@ test_that("parallel works on model fitting, tensor and association", {
 	pass <- FALSE
 	result = tryCatch({
 		unico.res = list()
-		unico.res$params.hat <- Unico(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, parallel = T, num_cores = 2)
-		unico.res$Z.hat <- tensor(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, Unico.mdl = unico.res$params.hat, parallel = T, num_cores = 2)
-		unico.res$params.hat <- association_parametric(sim.data$X, unico.res$params.hat, parallel = T, num_cores = 2)
-		unico.res$params.hat <- association_asymptotic(sim.data$X, unico.res$params.hat, parallel = T, num_cores = 2)
+		unico.res$params.hat <- Unico(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, parallel = T, num_cores = 2, log_file=NULL)
+		unico.res$Z.hat <- tensor(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, Unico.mdl = unico.res$params.hat, parallel = T, num_cores = 2, log_file=NULL)
+		unico.res$params.hat <- association_parametric(sim.data$X, unico.res$params.hat, parallel = T, num_cores = 2, log_file=NULL)
+		unico.res$params.hat <- association_asymptotic(sim.data$X, unico.res$params.hat, parallel = T, num_cores = 2, log_file=NULL)
 		pass <- TRUE
 	})
 	expect_equal(pass, TRUE)

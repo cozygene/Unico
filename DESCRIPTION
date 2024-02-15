@@ -11,7 +11,8 @@ Description: UNIfied Cross-Omics deconvolution (Unico) deconvolves
     3-dimensional tensors representing samples by features by cell types.
     Unico stands out as the first principled model-based deconvolution
     method that is theoretically justified for any heterogeneous genomic
-    data.
+    data. For more details see Chen and Rahmani et al. (2024)
+    <doi:10.1101/2024.01.27.577588>.
 License: GPL-3
 URL: https://cozygene.github.io/Unico/
 BugReports: https://github.com/cozygene/Unico/issues

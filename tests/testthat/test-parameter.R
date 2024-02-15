@@ -18,7 +18,7 @@ test_that("estimated params and tensors are consisitent with frozen result", {
 	#model fit
 	set.seed(2023)
 	Unico.mdl = list()
-	Unico.mdl$params.hat <- Unico(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, parallel = F)
+	Unico.mdl$params.hat <- Unico(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, parallel = F, log_file=NULL)
 	n = nrow(sim.data$W)
 	m = nrow(sim.data$X)
 	k = ncol(sim.data$W)
@@ -55,7 +55,7 @@ test_that("estimated params and tensors are consisitent with frozen result", {
 	Unico.mdl$params.hat$gammas_hat = frozen.mdl$gammas_hat
 	Unico.mdl$params.hat$betas_hat = frozen.mdl$betas_hat
 	Unico.mdl$params.hat$sigmas_hat = frozen.mdl$sigmas_hat
-	Unico.mdl$Z.hat <- tensor(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, Unico.mdl = Unico.mdl$params.hat, parallel = F)
+	Unico.mdl$Z.hat <- tensor(sim.data$X, sim.data$W, C1 = sim.data$C1, C2 = sim.data$C2, Unico.mdl = Unico.mdl$params.hat, parallel = F, log_file=NULL)
 	thr = 10**(-4)
 	for (h in 1:k){
 		expect_equal(mean((Unico.mdl$Z.hat[h,,] - frozen.mdl$Z_hat[h,,])**2) < thr, TRUE)

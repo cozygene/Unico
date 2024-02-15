@@ -9,7 +9,7 @@ All necessary scripts used for the analyses reported in the manuscript can be fo
 
 Unico will be available soon on CRAN as an R package
 
-### Installation from github
+### Install from GitHub
 ```
 if (!require("devtools", quietly = TRUE))
     install.packages("devtools")
@@ -17,7 +17,7 @@ devtools::install_github("https://github.com/cozygene/Unico")
 ```
 
 ### Version info
-Our algorithm is tested on both R 3.6.1 and R 4.1.0, on Windows, Linux and MacOS based machines.
+Our package is tested on both R 3.6.1 and R 4.1.0, on Windows, Linux and MacOS based machines.
 
 ### Tutorial
 Please head to <a href="https://cozygene.github.io/Unico/articles/Unico-Tutorial.html">this vignette</a> for a step by step tutorial on (1) deconvolving a simulated PBMC pseudo-bulk expression dataset and (2) association testing on subsets of publicly available methylation datasets.

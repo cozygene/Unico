@@ -650,7 +650,6 @@ association_asymptotic = function(X, Unico.mdl, slot_name = "asymptotic",
     mus_hat    = Unico.mdl$mus_hat   [feature.ids,]
     gammas_hat = Unico.mdl$gammas_hat[feature.ids,,drop = F]
     betas_hat  = Unico.mdl$betas_hat [feature.ids,,drop = F]
-    print(dim(betas_hat))
     taus_hat   = Unico.mdl$taus_hat  [feature.ids,,drop = F]
     sigmas_hat = Unico.mdl$sigmas_hat[feature.ids,,]
 
