@@ -122,7 +122,7 @@ validate_inputs_unico = function(X, W, C1, C2, fit_tau,
 
   assert("parallel must be of class 'logical'",   is.logical(parallel))
   assert("num_cores must be of class 'numeric' or NULL",  is.numeric(num_cores) | is.null(num_cores))
-  assert("log_file must be of class 'character' or NULL", is.character(log_file) | is.null(num_cores))
+  assert("log_file must be of class 'character' or NULL", is.character(log_file) | is.null(log_file))
   assert("verbose must be of class 'logical'",    is.logical(verbose))
   assert("debug must be of class 'logical'",      is.logical(debug))
 
