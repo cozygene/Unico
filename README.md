@@ -28,4 +28,4 @@ This software is developed by Zeyuan Johnson Chen (johnsonchen@cs.ucla.edu) and 
 
 ### License
 
-Unico is available under the <a href="https://opensource.org/license/gpl-3-0/" target="_blank">GPL-3 license</a>.
+Unico is available under the <a href="https://opensource.org/license/gpl-3-0" target="_blank">GPL-3 license</a>.
